@@ -1,0 +1,89 @@
+/*------------------------------------*\
+    NAV
+\*------------------------------------*/
+/**
+ * Navigatie in header
+ *
+    <div class="searchform">
+        <form action="zoeken.html" method="get">
+            <fieldset>
+                <legend>Zoeken</legend>
+                <input type="text" placeholder="Voer hier uw zoekterm in..." name="q" value="">
+                <input type="submit" value="Zoeken">
+            </fieldset>
+       </form>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        head.js(
+            { nav: 'scripts/yeah.search.js' }
+        );
+    </script>
+ *
+ */
+.searchform {
+    clear: both;
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    padding-right: icons-sprite-width(search) + 20px;
+    border: 1px solid $base-ui-color;
+    background: #FFF;
+
+    legend { display: none; }
+    .no-touch & input[type=text]:hover,
+    input[type=text]:focus,
+    input[type=text] {
+        width: 100%;
+        border: none;
+        background: transparent;
+
+        /* Voorkom dat d.m.v. selecteren de inhoud over de verticale as kan schuiven */
+        min-height: 30px;
+        line-height: 20px;
+        padding: 0 5px;
+    }
+
+    button,
+    .no-touch & button:hover,
+    .submit {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: icons-sprite-width(search) + 10px;
+        height: icons-sprite-height(search) + 10px;
+        padding: 5px;
+        margin: 0;
+        overflow: hidden;
+        border: none;
+        border-radius: 0;
+        text-indent: -900em;
+        background: transparent;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: icons-sprite-width(search);
+            height: icons-sprite-height(search);
+            @include icons-sprite(search);
+            text-indent: -900em;
+        }
+    }
+
+    .errormessage {
+        position: absolute;
+        left: -900em;
+        top: 26px;
+        width: 100%;
+        padding: 5px 0;
+        color: #C00;
+        opacity: 0;
+        @include transition(opacity 0.4s ease);
+    }
+
+    .searcherror .errormessage {
+        left: 0;
+        opacity: 1;
+    }
+}
