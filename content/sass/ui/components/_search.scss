@@ -1,15 +1,15 @@
 /*------------------------------------*\
-    NAV
+    SEARCH
 \*------------------------------------*/
 /**
- * Navigatie in header
+ * Zoekveld
  *
     <div class="searchform">
         <form action="zoeken.html" method="get">
             <fieldset>
                 <legend>Zoeken</legend>
                 <input type="text" placeholder="Voer hier uw zoekterm in..." name="q" value="">
-                <input type="submit" value="Zoeken">
+                <button title="Zoeken" type="submit"><span>Zoeken</span></button>
             </fieldset>
        </form>
     </div>
@@ -30,6 +30,12 @@
     padding-right: icons-sprite-width(search) + 20px;
     border: 1px solid $base-ui-color;
     background: #FFF;
+
+    fieldset {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
 
     legend { display: none; }
     .no-touch & input[type=text]:hover,
