@@ -1,10 +1,10 @@
 html-parts-search
 =================
 
-Uitbreiding op [html startup](https://github.com/nweevers/html_startup_inuit)
+Uitbreiding op [html startup](https://github.com/am-impact/html_startup_inuit)
 
 Bestanden
 ---------
  * content/img/icons/search.png
- * content/sass/ui/components/_search.scss
- * scripts/yeah.search.js
+ * content/sass/components/_search.scss
+ * scripts/fw.search.js
