@@ -1,7 +1,3 @@
-var Yeah = Yeah || {};
-
-$('.searchform form').validateSearch();
-
 /**
  * Search form validation
  */
@@ -43,3 +39,6 @@ $.fn.validateSearch = function( options )
         });
     });
 };
+
+
+$('.searchform form').validateSearch();
