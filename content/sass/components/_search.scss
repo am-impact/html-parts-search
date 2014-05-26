@@ -1,46 +1,18 @@
-/*------------------------------------*\
-    SEARCH
-\*------------------------------------*/
-/**
- * Zoekveld
- *
- * _settings.scss
- * $validation-error-color: #C00
- *
-    <div class="searchform">
-        <form action="zoeken.html" method="get">
-            <fieldset>
-                <legend>Zoeken</legend>
-                <input type="text" placeholder="Voer hier uw zoekterm in..." name="q" value="">
-                <button title="Zoeken" type="submit"><span>Zoeken</span></button>
-            </fieldset>
-       </form>
-    </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>
-        head.js(
-            { search: 'scripts/fw.search.js' }
-        );
-    </script>
- *
- */
 .searchform {
     clear: both;
     position: relative;
-    width: 100%;
-    max-width: 220px;
-    padding-right: icons-sprite-width(search) + 20px;
-    border: 1px solid $base-ui-color;
-    background: #FFF;
+    z-index: 12;
+    float: right;
+    width: 220px;
+    max-width: 18%;
+    @include inline;
+    margin: 25px 0 0 0;
+    padding-right: icons-sprite-width(button-search) + 20px;
+    border: 1px solid color(ui);
+    background: color(ui);
+    font-size: size(small, font);
+    font-weight: 300;
 
-    fieldset {
-        padding: 0;
-        margin: 0;
-        border: none;
-    }
-
-    legend { display: none; }
     .no-touch & input[type=text]:hover,
     input[type=text]:focus,
     input[type=text] {
@@ -49,8 +21,8 @@
         background: transparent;
 
         /* Voorkom dat d.m.v. selecteren de inhoud over de verticale as kan schuiven */
-        min-height: 30px;
-        line-height: 20px;
+        min-height: 35px;
+        line-height: 25px;
         padding: 0 5px;
     }
 
@@ -60,8 +32,8 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: icons-sprite-width(search) + 10px;
-        height: icons-sprite-height(search) + 10px;
+        width: image-width(sprite-file($icons, button-search)) + 10px;
+        height: image-height(sprite-file($icons, button-search)) + 10px;
         padding: 5px;
         margin: 0;
         overflow: hidden;
@@ -73,9 +45,9 @@
 
         span {
             display: block;
-            width: icons-sprite-width(search);
-            height: icons-sprite-height(search);
-            @include icons-sprite(search);
+            width: image-width(sprite-file($icons, button-search));
+            height: image-height(sprite-file($icons, button-search));
+            @include use-sprite(button-search);
             text-indent: -900em;
         }
     }
@@ -86,7 +58,7 @@
         top: 26px;
         width: 100%;
         padding: 5px 0;
-        color: $validation-error-color;
+        color: color(error, form);
         opacity: 0;
         @include transition(opacity 0.4s ease);
     }
@@ -94,5 +66,84 @@
     .searcherror .errormessage {
         left: 0;
         opacity: 1;
+    }
+
+    //
+    // Suggests
+    //
+    &__suggests {
+        position: absolute;
+        right: -10px;
+        top: 100%;
+        width: 150%;
+        padding: 5px;
+        margin: 2px;
+        border: 1px solid color(ui);
+        border-radius: size(global,radius);
+        background: #FFF;
+        box-shadow: 0 0 5px rgba(#000,0.4);
+
+        a {
+            display: block;
+            padding: 3px;
+            text-decoration: none;
+            font-weight: 300;
+            color: color(font);
+
+            &:hover,
+            &:focus {
+                color: #333;
+                background: #F5F5F5;
+            }
+
+            span {
+                font-weight: bold;
+                padding-right: 5px;
+            }
+        }
+
+        input[type=submit] {
+            float: left;
+            padding: 2px;
+            font-size: size(small);
+            font-family: $base-font;
+            font-weight: 300;
+            border: none;
+            color: color(secondary);
+            text-decoration: underline;
+            background: transparent;
+            outline: none;
+
+            &:focus {
+                outline: 1px dotted #333;
+                background: #F5F5F5;
+            }
+        }
+    }
+
+    .suggests__bottom {
+        @extend .clearfix;
+        padding: 8px 5px 5px 5px;
+        margin: 5px 0 0 0;
+        border-top: 1px solid color(ui);
+        line-height: 20px;
+    }
+
+    &__close {
+        float: right;
+        color: color(primary);
+        font-weight: 300;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    //
+    // Mq
+    //
+    @media #{$large-down} {
+        position: absolute;
+        right: 900em;
+        top: 0;
+        margin: 0;
     }
 }
