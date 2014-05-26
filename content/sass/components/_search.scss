@@ -3,11 +3,10 @@
     position: relative;
     z-index: 12;
     float: right;
-    width: 220px;
-    max-width: 18%;
+    width: 180px;
     @include inline;
-    margin: 25px 0 0 0;
-    padding-right: icons-sprite-width(button-search) + 20px;
+    margin: 0;
+    padding-right: image-width(sprite-file($icons, button-search)) + 5px;
     border: 1px solid color(ui);
     background: color(ui);
     font-size: size(small, font);
@@ -19,6 +18,7 @@
         width: 100%;
         border: none;
         background: transparent;
+        outline: none;
 
         /* Voorkom dat d.m.v. selecteren de inhoud over de verticale as kan schuiven */
         min-height: 35px;
@@ -42,6 +42,7 @@
         text-indent: -900em;
         background: transparent;
         cursor: pointer;
+        outline: none;
 
         span {
             display: block;
