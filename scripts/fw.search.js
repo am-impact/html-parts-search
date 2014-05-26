@@ -79,7 +79,10 @@
     // Filter suggest
     //
     function filterSuggest( searchvalue ) {
-        var $matches = $suggest.find('li[data-search*="' + searchvalue.toLowerCase() + '"]'),
+            // Eerst spaties uit zoek input filteren
+            // Als er bijvoorbeeld gezocht wordt op Voornaam Achternaam, dan wordt ook het juiste resultaat gevonden
+        var searchvalue = searchvalue.replace(/\s+/g, ''),
+            $matches = $suggest.find('li[data-search*="' + searchvalue.toLowerCase() + '"]'),
             total_matches = $matches.length;
 
         $suggest.find('li').addClass('visuallyhidden');
