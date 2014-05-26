@@ -4,8 +4,9 @@ Uitbreiding op [html startup](https://github.com/am-impact/html-startup)
 
 ## Bestanden
  * content/sass/components/_search.scss
- * scripts/fw.search.js
  * content/img/icons/button-search.png
+ * scripts/fw.search.js
+ * zoeken.json
 
 ## Voorbeelden
 
@@ -39,21 +40,3 @@ Uitbreiding op [html startup](https://github.com/am-impact/html-startup)
             error: #C00
         )
     )
-
-### zoeken.json
-    [
-        {
-            "titel": "Nieuwstitel",
-            "section": "Nieuws",
-            "url": "/nieuws/nieuwsitem/",
-            "sectionhandle": "nieuws",
-            "searchstring": "Ditisdestringwaaringezochtwordtmetnieuwscontent"
-        },
-        {
-            "titel": "Product titel",
-            "section": "Products",
-            "url": "/products/productitem/",
-            "sectionhandle": "products",
-            "searchstring": "Ditisdestringwaaringezochtwordtmetproductcontent"
-        }
-    ]
