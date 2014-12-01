@@ -4,6 +4,7 @@ $search__color--error: #C00;
 .search {
     position: relative;
     width: $search__width;
+    min-height: image-height(sprite-file($icons, button-search)) + 10px;
     padding-right: image-width(sprite-file($icons, button-search)) + 5px;
     border: 1px solid color(ui);
 
