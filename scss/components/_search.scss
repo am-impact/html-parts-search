@@ -1,0 +1,63 @@
+$search__width: 180px;
+$search__color--error: #C00;
+
+.search {
+    position: relative;
+    width: $search__width;
+    padding-right: image-width(sprite-file($icons, button-search)) + 5px;
+    border: 1px solid color(ui);
+
+    &__form {
+        &--error .search__errormessage {
+            left: 0;
+            opacity: 1;
+        }
+    }
+
+    .no-touch & input[type=text]:hover,
+    input[type=text]:focus,
+    input[type=text] {
+        width: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+    }
+
+    button,
+    .no-touch & button:hover,
+    .submit {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: image-width(sprite-file($icons, button-search)) + 10px;
+        height: image-height(sprite-file($icons, button-search)) + 10px;
+        padding: 5px;
+        margin: 0;
+        overflow: hidden;
+        border: none;
+        border-radius: 0;
+        text-indent: -900em;
+        background: transparent;
+        cursor: pointer;
+        outline: none;
+
+        span {
+            display: block;
+            width: image-width(sprite-file($icons, button-search));
+            height: image-height(sprite-file($icons, button-search));
+            @include use-sprite(button-search);
+            text-indent: -900em;
+        }
+    }
+
+    &__errormessage {
+        position: absolute;
+        left: -900em;
+        top: 100%;
+        width: 100%;
+        padding: 5px 0;
+        color: $search__color--error;
+        opacity: 0;
+        @include transition(opacity 0.4s ease);
+    }
+}
