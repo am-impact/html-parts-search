@@ -7,7 +7,7 @@
         "url": "http://www.domeinnaam.nl/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "http://www.domeinnaam.nl/?keyword={search_term_string}",
+            "target": "http://www.domeinnaam.nl/?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -16,7 +16,7 @@
 
 <div class="search">
     <form class="search__form" action="#">
-        <input type="text" autocomplete="off" placeholder="Vul hier uw zoekterm in" name="search" value="">
+        <input type="text" autocomplete="off" placeholder="Vul hier uw zoekterm in" name="q" value="">
         <button title="Zoeken" type="submit"><span>Zoeken</span></button>
         <!-- //import "searchsuggest" -->
     </form>

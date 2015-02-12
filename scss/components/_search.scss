@@ -4,8 +4,8 @@ $search__color--error: #C00;
 .search {
     position: relative;
     width: $search__width;
-    min-height: image-height(sprite-file($icons, button-search)) + 10px;
-    padding-right: image-width(sprite-file($icons, button-search)) + 5px;
+    min-height: image-height(sprite-file($sprite, button-search)) + 10px;
+    padding-right: image-width(sprite-file($sprite, button-search)) + 5px;
     border: 1px solid color(ui);
 
     &__form {
@@ -30,8 +30,8 @@ $search__color--error: #C00;
         position: absolute;
         right: 0;
         top: 0;
-        width: image-width(sprite-file($icons, button-search)) + 10px;
-        height: image-height(sprite-file($icons, button-search)) + 10px;
+        width: image-width(sprite-file($sprite, button-search)) + 10px;
+        height: image-height(sprite-file($sprite, button-search)) + 10px;
         padding: 5px;
         margin: 0;
         overflow: hidden;
@@ -44,8 +44,8 @@ $search__color--error: #C00;
 
         span {
             display: block;
-            width: image-width(sprite-file($icons, button-search));
-            height: image-height(sprite-file($icons, button-search));
+            width: image-width(sprite-file($sprite, button-search));
+            height: image-height(sprite-file($sprite, button-search));
             @include use-sprite(button-search);
             text-indent: -900em;
         }
